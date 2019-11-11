@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import SiteTemplate from './templates/SiteTemplate';
+import SiteTemplate from 'src/templates/SiteTemplate';
 
 const App: React.FC = () => {
   return (
