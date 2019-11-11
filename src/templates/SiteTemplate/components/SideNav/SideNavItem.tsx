@@ -27,7 +27,7 @@ const SideNavItem: React.FC<Props> = props => {
     [colorMode],
   );
   const activeColor = useMemo(
-    () => (colorMode === 'dark' ? 'teal.200' : 'teal.500'),
+    () => (colorMode === 'dark' ? 'main.200' : 'main.500'),
     [colorMode],
   );
 

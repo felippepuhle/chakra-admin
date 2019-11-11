@@ -1,17 +1,29 @@
 import React from 'react';
-import { BoxProps } from '@chakra-ui/core';
+import { Box, BoxProps } from '@chakra-ui/core';
 
-import SideNavBox from './SideNavBox';
-import SideNavItem from './SideNavItem';
+import SideNavContent from './SideNavContent';
 
-const SideNav: React.FC<BoxProps> = props => {
-  return (
-    <SideNavBox {...props}>
-      <SideNavItem to="/">Home</SideNavItem>
-      <SideNavItem to="/config">Config</SideNavItem>
-      <SideNavItem to="/users">Users</SideNavItem>
-    </SideNavBox>
-  );
-};
+const SideNav: React.FC<BoxProps> = props => (
+  <Box
+    as="aside"
+    position="fixed"
+    left="0"
+    width="100%"
+    height="100%"
+    top="0"
+    right="0"
+    {...props}
+  >
+    <Box
+      top="4rem"
+      position="relative"
+      overflowY="auto"
+      borderRightWidth="1px"
+      height="full"
+    >
+      <SideNavContent />
+    </Box>
+  </Box>
+);
 
 export default SideNav;

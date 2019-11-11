@@ -1,8 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Box, BoxProps, Flex, IconButton, useColorMode } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 import { Logo } from 'src/components';
+
+import MobileNav from './MobileNav';
 
 const Header: React.FC<BoxProps> = props => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -37,6 +39,8 @@ const Header: React.FC<BoxProps> = props => {
             onClick={toggleColorMode}
             icon={colorMode === 'light' ? 'moon' : 'sun'}
           />
+
+          <MobileNav />
         </Flex>
       </Flex>
     </Box>
