@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   Drawer,
   DrawerBody,
   IconButton,
-  useDisclosure,
   DrawerOverlay,
   DrawerContent,
+  useColorMode,
+  useDisclosure,
 } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
 import { SVG } from 'src/components';
 
+import { SideNavMode } from '../SideNav/modules/constants';
 import SideNavContent from '../SideNav/SideNavContent';
 
 const MenuIcon = styled(SVG.Menu)`
@@ -19,7 +21,13 @@ const MenuIcon = styled(SVG.Menu)`
 `;
 
 const MobileNav: React.FC = () => {
+  const { colorMode } = useColorMode();
   const { isOpen, onToggle, onClose } = useDisclosure();
+
+  const mode = useMemo(
+    () => (colorMode === 'dark' ? SideNavMode.DARK : SideNavMode.LIGHT),
+    [colorMode],
+  );
 
   return (
     <>
@@ -36,7 +44,7 @@ const MobileNav: React.FC = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerBody p={0}>
-            <SideNavContent />
+            <SideNavContent mode={mode} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Box, BoxProps, Flex, IconButton, useColorMode } from '@chakra-ui/core';
-import { Link } from 'react-router-dom';
-
-import { Logo } from 'src/components';
 
 import MobileNav from './MobileNav';
 
 const Header: React.FC<BoxProps> = props => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const bg = useMemo(() => (colorMode === 'dark' ? 'gray.700' : 'white'), [
+    colorMode,
+  ]);
 
   return (
     <Box
@@ -15,18 +16,14 @@ const Header: React.FC<BoxProps> = props => {
       pos="fixed"
       top="0"
       zIndex={4}
-      left="0"
+      left={[0, null, '18rem']}
       right="0"
       borderBottomWidth="1px"
-      width="full"
       height="4rem"
+      bg={bg}
       {...props}
     >
-      <Flex size="100%" px="6" align="center" justify="space-between">
-        <Link to="/" aria-label="Chakra UI, Back to homepage">
-          <Logo inverted={colorMode === 'dark'} />
-        </Link>
-
+      <Flex size="100%" px="6" align="center" justify="flex-end">
         <Flex align="center" color="gray.500">
           <IconButton
             aria-label={`Switch to ${
