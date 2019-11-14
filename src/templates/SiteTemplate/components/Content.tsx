@@ -12,8 +12,8 @@ const Content: React.FC = () => {
   ]);
 
   return (
-    <Box pl={[0, null, '18rem']} pt="4rem" height="full" bg={bg}>
-      <Box as="main" mx="auto" mb="3rem" maxWidth="46rem" pt={8} px={5}>
+    <Box ml={[0, null, '18rem']} mt="4rem" height="full" bg={bg}>
+      <Box as="main" mx="auto" pb="3rem" maxWidth="46rem" pt={8} px={5}>
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>

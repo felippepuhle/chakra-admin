@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
-import { Box, BoxProps, Flex, IconButton, useColorMode } from '@chakra-ui/core';
+import { Box, Flex, IconButton, useColorMode } from '@chakra-ui/core';
 
 import MobileNav from './MobileNav';
 
-const Header: React.FC<BoxProps> = props => {
+const Header: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   const bg = useMemo(() => (colorMode === 'dark' ? 'gray.700' : 'white'), [
@@ -21,7 +21,6 @@ const Header: React.FC<BoxProps> = props => {
       borderBottomWidth="1px"
       height="4rem"
       bg={bg}
-      {...props}
     >
       <Flex size="100%" px="6" align="center" justify="flex-end">
         <Flex align="center" color="gray.500">

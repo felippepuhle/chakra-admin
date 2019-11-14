@@ -14,11 +14,17 @@ const App: React.FC = () => {
 
         <Global
           styles={css`
+            html {
+              width: 100%;
+              height: 100%;
+            }
+
             html,
             body,
             #root {
-              width: 100%;
-              height: 100%;
+              display: flex;
+              flex-direction: column;
+              flex: 1;
             }
           `}
         />
