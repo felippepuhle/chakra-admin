@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, BoxProps } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/core';
 
 import { SideNavMode } from './modules/constants';
 import SideNavContent from './SideNavContent';
 
-const SideNav: React.FC<BoxProps> = props => (
+const SideNav: React.FC = () => (
   <Box
     as="aside"
     position="fixed"
@@ -14,7 +14,8 @@ const SideNav: React.FC<BoxProps> = props => (
     top="0"
     right="0"
     bg="gray.700"
-    {...props}
+    display={['none', null, 'block']}
+    maxWidth="18rem"
   >
     <Box position="relative" overflowY="auto" height="full">
       <SideNavContent mode={SideNavMode.DARK} />

@@ -8,11 +8,8 @@ import Footer from './components/Footer';
 const SiteTemplate: React.FC = () => (
   <>
     <Header />
-
-    <SideNav display={['none', null, 'block']} maxWidth="18rem" width="full" />
-
+    <SideNav />
     <Content />
-
     <Footer />
   </>
 );
