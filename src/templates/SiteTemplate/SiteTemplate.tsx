@@ -2,10 +2,15 @@ import React from 'react';
 
 import Header from './components/Header';
 import SideNav from './components/SideNav';
+import Body, { Props as BodyProps } from './components/Body';
 import Content from './components/Content';
 import Footer from './components/Footer';
 
-const SiteTemplate: React.FC = () => (
+type CommonComponents = {
+  Body: React.FC<BodyProps>;
+};
+
+const SiteTemplate: React.FC & CommonComponents = () => (
   <>
     <Header />
     <SideNav />
@@ -13,5 +18,7 @@ const SiteTemplate: React.FC = () => (
     <Footer />
   </>
 );
+
+SiteTemplate.Body = Body;
 
 export default SiteTemplate;

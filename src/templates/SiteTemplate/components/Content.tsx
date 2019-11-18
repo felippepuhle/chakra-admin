@@ -3,6 +3,7 @@ import { Box, useColorMode } from '@chakra-ui/core';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from 'src/routes/Home';
+import Users from 'src/routes/Users';
 
 const Content: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -13,11 +14,10 @@ const Content: React.FC = () => {
 
   return (
     <Box ml={[0, null, '18rem']} mt="4rem" height="full" bg={bg}>
-      <Box as="main" mx="auto" pb="3rem" maxWidth="46rem" pt={8} px={5}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </Box>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/users" component={Users} />
+      </Switch>
     </Box>
   );
 };
