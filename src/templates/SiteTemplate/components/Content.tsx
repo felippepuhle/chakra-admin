@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Box, useColorMode } from '@chakra-ui/core';
 import { Switch, Route } from 'react-router-dom';
 
+import { Path, routeTo } from 'src/router';
 import Home from 'src/routes/Home';
 import Users from 'src/routes/Users';
 
@@ -15,8 +16,8 @@ const Content: React.FC = () => {
   return (
     <Box ml={[0, null, '18rem']} mt="4rem" height="full" bg={bg}>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/users" component={Users} />
+        <Route exact path={routeTo(Path.HOME)} component={Home} />
+        <Route path={routeTo(Path.USERS_ROOT)} component={Users} />
       </Switch>
     </Box>
   );

@@ -27,7 +27,7 @@ const Home: React.FC = () => (
         value="1234"
       />
       <StatCard
-        icon={{ name: 'star', color: 'orange.300' }}
+        icon={{ name: 'star', color: 'orange.200' }}
         title="Followers"
         value="+1234k"
       />

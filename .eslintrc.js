@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     'react/prop-types': 0,
+    '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
   },
 };
