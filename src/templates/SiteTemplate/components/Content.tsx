@@ -15,10 +15,17 @@ const Content: React.FC = () => {
 
   return (
     <Box ml={[0, null, '18rem']} mt="4rem" height="full" bg={bg}>
-      <Switch>
-        <Route exact path={routeTo(Path.HOME)} component={Home} />
-        <Route path={routeTo(Path.USERS_ROOT)} component={Users} />
-      </Switch>
+      <Box
+        as="main"
+        mx="auto"
+        py={['2rem', '2.5rem', '3rem']}
+        px={['2rem', '2.5rem', '3rem']}
+      >
+        <Switch>
+          <Route exact path={routeTo(Path.HOME)} component={Home} />
+          <Route path={routeTo(Path.USERS_ROOT)} component={Users} />
+        </Switch>
+      </Box>
     </Box>
   );
 };
