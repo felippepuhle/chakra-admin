@@ -10,19 +10,27 @@ type Props = {
 };
 
 const StatCard: React.FC<Props> = ({ icon, title, value }) => (
-  <Card px={4} py={6}>
-    <Flex align="center" justify="space-between">
-      <Icon size="2.75rem" {...icon} mx={1} my={1} />
+  <Card>
+    <Card.Body>
+      <Flex align="center" justify="space-between">
+        <Icon size="2.75rem" {...icon} mx={1} my={1} />
 
-      <Flex direction="column" textAlign="right" px={1} py={1} flexWrap="wrap">
-        <Text fontSize="sm" fontWeight="medium" color="gray.400">
-          {title}
-        </Text>
-        <Text fontSize="lg" color="gray.500">
-          {value}
-        </Text>
+        <Flex
+          direction="column"
+          textAlign="right"
+          px={1}
+          py={1}
+          flexWrap="wrap"
+        >
+          <Text fontSize="sm" fontWeight="medium" color="gray.400">
+            {title}
+          </Text>
+          <Text fontSize="lg" color="gray.500">
+            {value}
+          </Text>
+        </Flex>
       </Flex>
-    </Flex>
+    </Card.Body>
   </Card>
 );
 

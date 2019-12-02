@@ -10,7 +10,7 @@ type CommonComponents = {
 };
 
 const CardHeader: React.FC<BoxProps> & CommonComponents = props => (
-  <Box pt={4} px={4} {...props} />
+  <Box py={4} px={4} {...props} />
 );
 
 CardHeader.Text = CardHeaderText;
